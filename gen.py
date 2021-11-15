@@ -343,6 +343,8 @@ for prg in progs:
     cat = cat[0].upper() + cat[1:]
     cats.add(cat)
 
+cats = sorted(cats)
+
 _lbl_title = lineno
 
 # Use CHR$(14) to go to lowercase
@@ -396,21 +398,30 @@ addline('cursor 35,17:print "{cyn}demo disk 1"')
 # PRETTY LOOP
 addline('sc=0:pk=16:s$="press any key to begin!')
 addlabel('.tloop')
+addline('gosub .drawborder')
+addline('x=28:y=20:pk=pk+1:gosub .rainbowstr')
+addline('get a$: if a$="" then goto .tloop')
+addline('goto .endtitle')
+
+addlabel('.drawborder')
 addline('c = sc')
 addline('y=0:for x=0 to 78:gosub .drawblock:next x')
 addline('x=79:for y=0 to 23:gosub .drawblock:next y')
 addline('y=24:for x=79 to 1 step -1:gosub .drawblock:next x')
 addline('x=0:for y=24 to 1 step -1:gosub .drawblock:next y')
 addline('sc=sc+1:if sc>15 then sc=0')
-addline('x=28:y=20:pk=pk+1:gosub .rainbowstr')
-addline('get a$: if a$="" then goto .tloop')
-addline('goto .endtitle')
+addline('return')
 
 addlabel('.drawblock')
 addline('rem *** draw block ***')
 addline('if pk=16 then poke 2048+x+y*80,160')
 addline('poke $1f800+x+y*80,64+c')
 addline('c=c+1:if c>15 then c=0')
+addline('return')
+
+addlabel('.clr')
+addline('rem *** clear screen ***')
+addline('for y=1 to 23:for x=1 to 78:poke 2048+x+y*80,32:next x:next y')
 addline('return')
 
 addlabel('.rainbowstr')
@@ -424,52 +435,59 @@ addline('return')
 
 addlabel('.endtitle')
 # MAIN MENU
-addline('border 6:background 6:color 1')
+addline('color 1')
 addline('palette restore')
 
 addline('bank 128')
+addline('gosub .clr')
+addline('window 2,2,77,23')
 
-addlabel('.main')
+addlabel('.main.')
 addline('print "{clr}";chr$(14);')
-addline('print "MEGA65 Release Disk"')
-addline('print "==================="')
+addline('s$ = "{reverse on}MEGA65 Release Disk{reverse off}"')
+addline('print s$')
+addline('print')
 opt = 1
 for cat in cats:
     print(cat)
-    addline('print "{}) {}"'.format(opt, cat))
+    addline('print chr$(159);"{}";chr$(5);") {}"'.format(opt, cat))
     opt += 1
 addline('print')
-addline('print "D) Disable auto-boot"')
-addline('print "X) Exit to BASIC"')
-addline('print:print "Enter your choice: ";')
+addline('print "{cyan}D{white}) Disable auto-boot"')
+addline('print "{cyan}X{white}) Exit to BASIC"')
+addline('print:print "{cyan}Enter your choice:{white} ";')
 addlabel('.mainloop')
-addline('getkey a$')
+addline('get a$')
 opt = 1
 for cat in cats:
-    addline('if a$="{}" then goto .opt_{}'.format(opt, cat))
+    addline('if a$="{}" then goto .opt_{}.'.format(opt, cat))
     opt += 1
 
 addline('if a$="d" then goto .disable')
 addline('if a$="x" then gosub .exitbasic : end')
-
+addline('x=0:y=0:gosub .rainbowstr:pk=pk+1:color 1')
+addline('gosub .drawborder')
 addline('goto .mainloop')
 
 addlabel('.exitbasic')
 addline('play')
 # restore prior screen contents
-addline('print "{clr}";chr$(142);')
+addline('print "{home}{home}{clr}";chr$(142);')
 addline('dma 0, 2000, 0, 4, 2048, 0')
 addline('dma 0, 2000, 2000, 4, $f800, 1')
 addline('cursor rx,ry')
+addline('border 6:background 6:color 1')
 addline('return')
 
 addlabel('.disable')
 addline('print "{clr}";')
-addline('print "Disable Auto-boot"')
-addline('print "================="')
-addline('print "- Type \'Y\' to disable auto boot into demo disk"')
+addline('s$ = "{reverse on}Disable Auto-boot{reverse off}"')
+addline('print s$')
+addline('print')
+addline('print "- Type \'{cyan}Y{white}\' to disable auto boot into demo disk"')
 addline('print "- Any other key will return to main menu"')
-addline('getkey a$')
+addlabel('.dslp.')
+addline('get a$')
 addline('if a$="y" then begin')
 addline('gosub .exitbasic')
 addline('q$=chr$(34)+chr$(34)+chr$(20)')
@@ -478,14 +496,18 @@ addline('print "rename ";q$;"autoboot.c65";q$;" to ";q$;"menu";q$')
 addline('rename "autoboot.c65" to "menu"')
 addline('end')
 addline('bend')
-addline('goto .main')
+addline('x=0:y=0:gosub .rainbowstr:pk=pk+1:color 1')
+addline('gosub .drawborder')
+addline('if a$="" then goto .dslp.')
+addline('goto .main.')
 
 # Category menus
 for cat in cats:
-    addlabel('.opt_{}'.format(cat))
+    addlabel('.opt_{}.'.format(cat))
     addline('print "{clr}";')
-    addline('print "{}"'.format(cat))
-    addline('print "{}"'.format('='*len(cat)))
+    addline('s$ = chr$(18)+"{}"+chr$(146)'.format(cat))
+    addline('print s$'.format(cat))
+    addline('print')
     opt = 1
     for prg in progs:
         if prg['category'] == cat.lower():
@@ -494,50 +516,57 @@ for cat in cats:
                 optval = chr(ord('A')+optval-10)
             if opt > 9:
                 addline('cursor 30, {}'.format(opt-10+2))
-            addline('print "{}) {}"'.format(optval, prg['title']))
+            addline('print chr$(159);"{}";chr$(5);") {}"'.format(optval, prg['title'].upper()))
             opt += 1
 
     if opt > 9:
         addline('cursor 0, 17')
-    addline('print "X) Exit to prior menu"')
-    addline('print:print "Enter your choice: ";')
+    else:
+        addline('print')
+    addline('print "{cyan}X{white}) Exit to prior menu"')
+    addline('print:print "{cyan}Enter your choice:{white} ";')
+
     addlabel('.opt_{}_loop'.format(cat))
-    addline('getkey a$')
+    addline('get a$')
     opt = 1
     for prg in progs:
         if prg['category'] == cat.lower():
             optval = opt
             if optval > 9:
                 optval = chr(ord('a')+optval-10)
-            addline('if a$="{}" then goto .prg_{}'.format(optval, prg['title']))
+            addline('if a$="{}" then goto .prg_{}.'.format(optval, prg['title']))
             opt += 1
 
-    addline('if a$="x" then goto .main')
+    addline('if a$="x" then goto .main.')
+    addline('x=0:y=0:gosub .rainbowstr:pk=pk+1:color 1')
+    addline('gosub .drawborder')
     addline('goto .opt_{}_loop'.format(cat))
 
 # show program details
 for prg in progs:
-    addlabel('.prg_{}'.format(prg['title']))
-    addline('print "{clr}";')
-    addline('print "{}"'.format(prg['title']))
-    addline('print "{}"'.format('='*len(prg['title'])))
-    addline('print "Author: {}"'.format(prg['author']))
-    addline('print')
-    addline('print "{}"'.format('- '*39))
-    for ln in prg['desc'].splitlines():
-        addline('print "{}"'.format(ln))
-    addline('print "{}"'.format('- '*39))
-    addline('print')
-    addline('print "Press X to return to prior menu."');
-    addline('print')
-    addline('print "Press RETURN to start program."')
-    addlabel('.prg_{}_loop'.format(prg['title']))
-    addline('getkey a$')
+    addlabel('.prg_{}.'.format(prg['title']))
     cat = prg['category']
     cat = cat[0].upper() + cat[1:]
-    addline('if a$="x" then goto .opt_{}'.format(cat))
+    addline('print "{clr}";')
+    addline('s$ = chr$(18)+"{}"+chr$(146)'.format(prg['title'].upper()))
+    addline('print chr$(2);"{}";chr$(130);" : ";s$;" - {}'.format(cat, format(prg['author'])))
+    addline('print')
+    addline('print "{light gray}";')
+    addline('print "{}"'.format('- '*38))
+    for ln in prg['desc'].splitlines():
+        addline('print "{}"'.format(ln))
+    addline('print "{}"'.format('- '*38))
+    addline('print "{white}";')
+    addline('print')
+    addline('print "Press {cyan}X{white} to return to prior menu."');
+    addline('print "Press {cyan}RETURN{white} to start program."')
+    addlabel('.prg_{}_loop'.format(prg['title']))
+    addline('get a$')
+    addline('if a$="x" then goto .opt_{}.'.format(cat))
+    addline('x={}:y=0:gosub .rainbowstr:pk=pk+1:color 1'.format(len(prg['category'])+3))
+    addline('gosub .drawborder')
     addline('if a$<>chr$(13) then goto .prg_{}_loop'.format(prg['title']))
-    addline('print "{clr}";chr$(142);:play')
+    addline('print "{home}{home}{clr}";chr$(142);:play')
     addline('print "loading \'{}\'..."'.format(prg['title']))
     addline('clr:dload "{}"'.format(prg['title']))
     addline('end')
