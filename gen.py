@@ -567,6 +567,7 @@ for prg in progs:
     addline('gosub .drawborder')
     addline('if a$<>chr$(13) then goto .prg_{}_loop'.format(prg['title']))
     addline('print "{home}{home}{clr}";chr$(142);:play')
+    addline('border 6:background 6:color 1')
     addline('print "loading \'{}\'..."'.format(prg['title']))
     addline('clr:dload "{}"'.format(prg['title']))
     addline('end')
