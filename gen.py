@@ -1,5 +1,5 @@
 import json
-import requests
+# import requests
 
 progs = [
   {
@@ -408,7 +408,7 @@ addline('goto .endtitle')
 
 addlabel('.drawblock')
 addline('rem *** draw block ***')
-addline('poke 2048+x+y*80,160')
+addline('if pk=16 then poke 2048+x+y*80,160')
 addline('poke $1f800+x+y*80,64+c')
 addline('c=c+1:if c>15 then c=0')
 addline('return')
@@ -435,7 +435,7 @@ addline('print "MEGA65 Release Disk"')
 addline('print "==================="')
 opt = 1
 for cat in cats:
-    print cat
+    print(cat)
     addline('print "{}) {}"'.format(opt, cat))
     opt += 1
 addline('print')
@@ -552,7 +552,7 @@ for line in lines:
     linecnt += 1
 
 # write lines to file
-f = open('test.bas', 'w')
+f = open('autoboot.bas', 'w')
 for line in lines:
     f.write(line)
 f.close()

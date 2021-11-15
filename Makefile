@@ -13,7 +13,7 @@
 # Building:
 # - I tried building inside `src` folder with `make petcat`, but ran into build errors which I fixed manually by ignoring/commenting out things that weren't available (I assumed petcat tool wouldn't need fancy includes, as I hope it's just a straightforward console tool).
 
-autoboot.cfg:
+autoboot.c65:
 	python gen.py
-	petcat -w65 -o autoboot.c65 test.bas
+	./petcat -w65 -o autoboot.c65 autoboot.bas
 	# After generating your 'autoboot.c65', add it to the `MEGA65.D81` disk
