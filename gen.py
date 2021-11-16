@@ -140,7 +140,7 @@ Usage:
 For now it just can draw a basic mandelbrot set.
 
 Source code available at https://github.com/lydon42/mandelbrot-explorer65""",
-      'category': 'utility',
+      'category': 'demo',
       'author': 'lydon'
   },
   {
