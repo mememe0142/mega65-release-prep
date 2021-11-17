@@ -114,6 +114,19 @@ The C65/Mega65 version is (of course ;)) a little souped up: It's a 2 player gam
       'author': 'Martin Roscher'
   },
   {
+      'title': 'luma',
+      'desc': """Luma is a laser based sliding puzzle game for the Commodore 64. Slide batteries, lasers and mirrors around to light the targets within
+the given shift count. With 128 levels Luma will keep you occupied for hours and test your puzzling skills to the max.
+
+Play in Normal mode and try to complete the levels within a designated number of shifts, and return to where you left off using level codes on each
+level. Or if you are feeling like a more casual game play in Practice mode to test any of the levels with no shift limits.
+
+Originally written for the C64 on a Twitch stream (https://www.twitch.tv/shallan50k) in a marathon 16 hour charity session in support of the Extra
+Life charity (https://www.extra-life.org/), raising an incredible $1220.69.""",
+      'category': 'game',
+      'author': 'Shallan50k'
+  },
+  {
       'title': 'kkniffel',
       'desc': 'Yahtzee style game for the MEGA65. Includes (actually reasonably skillful) computer player, high score list and session counter to monitor your KKniffel addiction.',
       'category': 'game',
@@ -128,7 +141,9 @@ Most first generation MODs now supported.
 Usage:
 - Place .MOD files onto your SD Card
 - Run Manche
-- Press F1 and type in your .MOD file name and press ENTER to play. More detailed instructions can be found within .zip file at:
+- Press F1 and type in your .MOD file name and press ENTER to play.
+- Your SD card contains two examples you can try (HEAVY.MOD and POPCORN.MOD)
+- More detailed instructions can be found within .zip file at:
   https://files.mega65.org?id=41df2383-3001-4b90-a499-7001721cfe5d""",
       'category': 'utility',
       'author': 'M3wP'
@@ -204,6 +219,12 @@ and b values for each of the 16 colours.""",
       'author': 'Bit Shifter'
   },
   {
+      'title': 'raster65',
+      'desc': 'Small raster intro with dual SID music. Comes with source code and outdated toolchain.',
+      'category': 'demo',
+      'author': 'deft'
+  },
+  {
       'title': 'revolution65',
       'desc': """Strategy game where you attempt to take over a city from the current government by trying to take over the streets and prominent buildings. You can either play against the computer or a human opponent.""",
       'category': 'game',
@@ -255,6 +276,27 @@ Written in BASIC 65.""",
       'author': 'zzsila'
   },
   {
+      'title': 'toxicfrenzy',
+      'desc': """This is a Mega65 Port of the original C64 game by Waulok.
+
+Toxic Frenzy is a game heavily inspired by the Nintendo Game & Watch title Oil Panic. You need to use your toxic-proof container to collect the leaking
+fluid from the damaged pipe above. Your container can only hold up to three drops of toxic fluid at once, otherwise your container will overflow
+resulting in a loss in one of your lives. Once you've collected some of the toxic fluid, dash towards one of the two exits where you can pour it out to
+your work mate who will hopefully be waiting below in the right spot to collect and safely dispose of it in a responsible manner - otherwise the toxic
+fluid over will end up covering the innocent by-standers.""",
+      'category': 'game',
+      'author': 'Shallan50k'
+  },
+  {
+      'title': 'tutter',
+      'desc': """Tutter - Demo of 256 colour FCM, Vertical Char Flips, Raster splits, Palette fades & C64 Music.
+The image I've used is a homage to the Tutankhamun images used in early Amiga and Mega 65 demos...
+
+14/11/2021 Appendix : If did this again, I'd use the RRB to smoothly scroll each segment, this version uses raster splits. Cheers, Geehaf.""",
+      'category': 'demo',
+      'author': 'geehaf'
+  },
+  {
       'title': 'vector clock',
       'desc': """This BASIC 65 program shows the current time from RTC using the 640x400 monochrome bitmap mode of the MEGA65.
 
@@ -281,15 +323,6 @@ This is the MEGA65 version of the C64 game 'Wave Hero' from the 2018 Reset64 4KB
 This version was written in Millfork, and the src folder in the zip file contains the source code.""",
       'category': 'game',
       'author': 'GeirS'
-  },
-  {
-      'title': 'tutter',
-      'desc': """Tutter - Demo of 256 colour FCM, Vertical Char Flips, Raster splits, Palette fades & C64 Music.
-The image I've used is a homage to the Tutankhamun images used in early Amiga and Mega 65 demos...
-
-14/11/2021 Appendix : If did this again, I'd use the RRB to smoothly scroll each segment, this version uses raster splits. Cheers, Geehaf.""",
-      'category': 'demo',
-      'author': 'geehaf'
   },
   {
       'title': 'yaped',
@@ -574,6 +607,7 @@ for prg in progs:
     addline('print "{home}{home}{clr}";chr$(142);:play')
     addline('border 6:background 6:color 1')
     addline('print "loading \'{}\'..."'.format(prg['title']))
+    addline('sleep 0.5')
     addline('clr:dload "{}"'.format(prg['title']))
     addline('end')
 
