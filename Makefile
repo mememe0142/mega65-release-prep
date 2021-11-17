@@ -17,3 +17,7 @@ autoboot.c65: gen.py
 	python gen.py
 	./petcat -w65 -o autoboot.c65 autoboot.bas
 	# After generating your 'autoboot.c65', add it to the `MEGA65.D81` disk
+
+border.prg: border.s
+	../mega65-tools/cc65/bin/ca65.exe -g -l border.list border.s
+	../mega65-tools/cc65/bin/ld65.exe -t none -Ln border.lbl --mapfile border.map border.o -o border.prg
