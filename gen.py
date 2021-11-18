@@ -3,6 +3,12 @@ import json
 
 progs = [
   {
+      'title': '2 bitplane cube',
+      'desc': 'Exploring the C65 bitplane modes and the new instruction of the 4502.',
+      'category': 'demo',
+      'author': 'Stigodump'
+  },
+  {
       'title': 'arthurs day out',
       'desc': """A fun text adventure created for the PunyInform game jam.
 Tons of fun pop culture references.
@@ -20,6 +26,12 @@ It uses 8 x 16 pixel wide sprites (16 colours available for each sprite) and 80 
       'author': 'geehaf'
   },
   {
+      'title': 'break-a-tile',
+      'desc': "A three level Breakout clone made with Mega65 BASIC",
+      'category': 'game',
+      'author': 'akmafin'
+  },
+  {
       'title': 'camelot-1536dots',
       'desc': """1536 dots in 60fps by Camelot
 
@@ -28,7 +40,7 @@ Load & run in C65 mode. Tested on DevKit and Xemu.""",
       'author': 'JesperGravgaard'
   },
   {
-      'title': 'charwars65',
+      'title': 'charwars 65',
       'desc': 'My entry for Shallan\'s Basic Challenge in Feb 21.',
       'category': 'game',
       'author': 'hstampfl'
@@ -62,20 +74,26 @@ d81 files contains a version without comments (COMBAT_NO_CMT.prg) and a version 
       'author': 'Amok64'
   },
   {
+      'title': 'dycplogo',
+      'desc': 'Very simple intro massively using DMA and DYCP trick.',
+      'category': 'demo',
+      'author': 'Amok64'
+  },
+  {
       'title': 'guide akmafin',
       'desc': 'A Game for the MEGA65 (Labyrinth/Maze)',
       'category': 'game',
       'author': 'stepz'
   },
   {
-      'title': 'hiomill65',
+      'title': 'hiomill 65',
       'desc': """A port of the 2020 4K Compo entry Hose It Out. Graphics are updated from the C128 VDC version. So it runs in 320x200 256 colour mode. Although the graphics currently only use 16 of said 256 colour mode.
 Joystick in port 2. In some emuators the sprite is off by a couple of pixels, in others it right. Needs 'merger' branch or hardware to get the C64 sprite working properly.""",
       'category': 'game',
       'author': 'oziphantom'
   },
   {
-      'title': 'hitblock65',
+      'title': 'hitblock 65',
       'desc': """A small demake of PC game HitBlock (a remake of C64 game Crillion).
 
 Full project for C64Studio. GitHub repo is at: https://github.com/GeorgRottensteiner/HitBlock-Mega65""",
@@ -89,14 +107,14 @@ Full project for C64Studio. GitHub repo is at: https://github.com/GeorgRottenste
       'author': 'ubik'
   },
   {
-      'title': 'lemonade65',
+      'title': 'lemonade 65',
       'desc': """Since no 8-bit-platform is complete without its own implementation of the good old lemonade stand simulation, I decided to bring the good old PET game over to our beloved platform.
 The C65/Mega65 version is (of course ;)) a little souped up: It's a 2 player game, we have a high score list and a fancy report graph after the sale.""",
       'category': 'game',
       'author': 'ubik'
   },
   {
-      'title': 'kalle65',
+      'title': 'kalle kloakk 65',
       'desc': 'Kalle Kloakk Mega 65',
       'category': 'game',
       'author': 'Docster'
@@ -145,7 +163,7 @@ Usage:
 - Your SD card contains two examples you can try (HEAVY.MOD and POPCORN.MOD)
 - More detailed instructions can be found within .zip file at:
   https://files.mega65.org?id=41df2383-3001-4b90-a499-7001721cfe5d""",
-      'category': 'utility',
+      'category': 'music',
       'author': 'M3wP'
   },
   {
@@ -225,7 +243,7 @@ and b values for each of the 16 colours.""",
       'author': 'deft'
   },
   {
-      'title': 'revolution65',
+      'title': 'revolution 65',
       'desc': """Strategy game where you attempt to take over a city from the current government by trying to take over the streets and prominent buildings. You can either play against the computer or a human opponent.""",
       'category': 'game',
       'author': 'ubik'
@@ -276,7 +294,7 @@ Written in BASIC 65.""",
       'author': 'zzsila'
   },
   {
-      'title': 'toxicfrenzy',
+      'title': 'toxic frenzy',
       'desc': """This is a Mega65 Port of the original C64 game by Waulok.
 
 Toxic Frenzy is a game heavily inspired by the Nintendo Game & Watch title Oil Panic. You need to use your toxic-proof container to collect the leaking
@@ -315,7 +333,7 @@ For the origins of the wa-tor simulation, see https://en.wikipedia.org/wiki/Wa-T
       'author': 'ubik'
   },
   {
-      'title': 'wavehero65',
+      'title': 'wave hero 65',
       'desc': """How far can you go on your PWC (personal watercraft), without hitting any rocks or reefs? You start off slowly, but the speed automatically increases as you reach various distance milestones.
 
 This is the MEGA65 version of the C64 game 'Wave Hero' from the 2018 Reset64 4KB Craptastic Game Competition.
@@ -430,6 +448,7 @@ addline('play b$,a$,m1$,,,m2$:sleep 0.05:play ,,,b$,a$')
 
 # PRETTY LOOP
 addline('sc=0:pk=16:s$="press any key to begin!')
+addline('cursor 34,19:color 11:print "rom v92049";')
 addlabel('.tloop')
 addline('gosub .drawborder')
 addline('x=28:y=21:pk=pk+1:gosub .rainbowstr')
@@ -490,7 +509,7 @@ for cat in cats:
     print(cat)
     addline('print chr$(159);"{}";chr$(5);") {}"'.format(opt, cat))
     opt += 1
-addline('print')
+addline('cursor 0, 16')
 addline('print "{cyan}D{white}) Disable auto-boot"')
 addline('print "{cyan}X{white}) Exit to BASIC"')
 addline('print:print "{cyan}Enter your choice:{white} ";')
@@ -552,15 +571,14 @@ for cat in cats:
             optval = opt
             if optval > 9:
                 optval = chr(ord('A')+optval-10)
-            if opt > 9:
-                addline('cursor 30, {}'.format(opt-10+2))
+            if opt > 18:
+                addline('cursor 56, {}'.format(opt-19+2))
+            elif opt > 9:
+                addline('cursor 28, {}'.format(opt-10+2))
             addline('print chr$(159);"{}";chr$(5);") {}"'.format(optval, prg['title'].upper()))
             opt += 1
 
-    if opt > 9:
-        addline('cursor 0, 17')
-    else:
-        addline('print')
+    addline('cursor 0, 17')
     addline('print "{cyan}X{white}) Exit to prior menu"')
     addline('print:print "{cyan}Enter your choice:{white} ";')
 
@@ -595,7 +613,7 @@ for prg in progs:
         addline('print "{}"'.format(ln))
     addline('print "{}"'.format('- '*38))
     addline('print "{white}";')
-    addline('print')
+    addline('cursor 0, 19')
     addline('print "Press {cyan}X{white} to return to prior menu."');
     addline('print "Press {cyan}RETURN{white} to start program."')
     addlabel('.prg_{}_loop'.format(prg['title']))
