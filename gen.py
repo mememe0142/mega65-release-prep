@@ -4,7 +4,7 @@ import json
 progs = [
   {
       'title': '2 bitplane cube',
-      'desc': 'Exploring the C65 bitplane modes and the new instruction of the 4502.',
+      'desc': 'Exploring the C65 bitplane modes and the new instructions of the 4502.',
       'category': 'demo',
       'author': 'Stigodump'
   },
@@ -27,7 +27,7 @@ It uses 8 x 16 pixel wide sprites (16 colours available for each sprite) and 80 
   },
   {
       'title': 'break-a-tile',
-      'desc': "A three level Breakout clone made with Mega65 BASIC",
+      'desc': "A three level Breakout clone made with MEGA65 BASIC",
       'category': 'game',
       'author': 'akmafin'
   },
@@ -53,7 +53,7 @@ Load & run in C65 mode. Tested on DevKit and Xemu.""",
   },
   {
       'title': 'chicko',
-      'desc': """A simple jumping game in the style of Chrome's 'Dino' which was submitted for Shallan's April 2021 Mega 65 competition.""",
+      'desc': """A simple jumping game in the style of Chrome's 'Dino' which was submitted for Shallan's April 2021 MEGA65 competition.""",
       'category': 'game',
       'author': 'geehaf'
   },
@@ -67,7 +67,7 @@ Just playing around with colours a bit. Maybe someday I'll add some colour cycli
   },
   {
       'title': 'combat',
-      'desc': """Small 2 players game written in Basic V10 and tested/working on XEMU - 911001.BIN ROM (Shallan monthly give away challenge)
+      'desc': """Small 2 players game written in Basic V10 and tested/working on XEMU (Shallan monthly give away challenge)
 This game is a partial clone of Atari 2600 game 'COMBAT'.
 d81 files contains a version without comments (COMBAT_NO_CMT.prg) and a version with comments (COMBAT_CMT.prg).""",
       'category': 'game',
@@ -81,14 +81,28 @@ d81 files contains a version without comments (COMBAT_NO_CMT.prg) and a version 
   },
   {
       'title': 'guide akmafin',
-      'desc': 'A Game for the MEGA65 (Labyrinth/Maze)',
+      'desc': 'Guide AkmaFin Home - A Game for the MEGA65 (Labyrinth/Maze)',
       'category': 'game',
       'author': 'stepz'
   },
   {
+      'title': 'lunar taxi',
+      'desc': 'A simple Lunar Lander style game made as an exercise to learn the Millfork language',
+      'category': 'game',
+      'author': 'AkmaFin'
+  },
+
+  {
+      'title': 'fb-bs demo',
+      'desc': """Fred Bowen's original C65 BASIC demo, ehanced and updated for BASIC 65 by Bit Shifter""",
+      'category': 'demo',
+      'author': 'Bit Shifter'
+  },
+
+  {
       'title': 'hiomill 65',
       'desc': """A port of the 2020 4K Compo entry Hose It Out. Graphics are updated from the C128 VDC version. So it runs in 320x200 256 colour mode. Although the graphics currently only use 16 of said 256 colour mode.
-Joystick in port 2. In some emuators the sprite is off by a couple of pixels, in others it right. Needs 'merger' branch or hardware to get the C64 sprite working properly.""",
+Joystick in port 2. In some emulators the sprite is off by a couple of pixels, in others it right. Needs 'merger' branch or hardware to get the C64 sprite working properly.""",
       'category': 'game',
       'author': 'oziphantom'
   },
@@ -109,13 +123,13 @@ Full project for C64Studio. GitHub repo is at: https://github.com/GeorgRottenste
   {
       'title': 'lemonade 65',
       'desc': """Since no 8-bit-platform is complete without its own implementation of the good old lemonade stand simulation, I decided to bring the good old PET game over to our beloved platform.
-The C65/Mega65 version is (of course ;)) a little souped up: It's a 2 player game, we have a high score list and a fancy report graph after the sale.""",
+The C65/MEGA65 version is (of course ;)) a little souped up: It's a 2 player game, we have a high score list and a fancy report graph after the sale.""",
       'category': 'game',
       'author': 'ubik'
   },
   {
       'title': 'kalle kloakk 65',
-      'desc': 'Kalle Kloakk Mega 65',
+      'desc': 'Kalle Kloakk MEGA65',
       'category': 'game',
       'author': 'Docster'
   },
@@ -127,7 +141,7 @@ The C65/Mega65 version is (of course ;)) a little souped up: It's a 2 player gam
   },
   {
       'title': 'logitrumps',
-      'desc': 'quiz game entry in Shallan\'s Basic Challenge',
+      'desc': 'Quiz game entry in Shallan\'s Basic Challenge',
       'category': 'game',
       'author': 'Martin Roscher'
   },
@@ -161,8 +175,7 @@ Usage:
 - Run Manche
 - Press F1 and type in your .MOD file name and press ENTER to play.
 - Your SD card contains two examples you can try (HEAVY.MOD and POPCORN.MOD)
-- More detailed instructions can be found within .zip file at:
-  https://files.mega65.org?id=41df2383-3001-4b90-a499-7001721cfe5d""",
+- More detailed instructions can be found within .zip file""",
       'category': 'music',
       'author': 'M3wP'
   },
@@ -204,7 +217,7 @@ Source code available at https://github.com/lydon42/mandelbrot-explorer65""",
   },
   {
       'title': 'paledit',
-      'desc': """simple palette editor
+      'desc': """Simple palette editor
 
 This program lets you edit, load and save the additional sixteen
 'highlite'-colours of the vic iii textmode. it is especially useful
@@ -252,9 +265,7 @@ and b values for each of the 16 colours.""",
       'title': 'rrb sprites',
       'desc': """I think I've tamed the Raster Rewrite Buffer (RRB) a little by producing a 'soft' sprite routine.
 You're seeing 52 NCM sprites, each 16x16 pixels, spinning around using polar coordinates. I've also made use of X and Y flipping.
-As you watch, more movement patterns emerge. This version is intended for the Mega65 HW. You can see it in action here :
-
-https://youtu.be/gltOJAuwaX0""",
+As you watch, more movement patterns emerge. This version is intended for the MEGA65 HW.""",
       'category': 'demo',
       'author': 'geehaf'
   },
@@ -295,7 +306,7 @@ Written in BASIC 65.""",
   },
   {
       'title': 'toxic frenzy',
-      'desc': """This is a Mega65 Port of the original C64 game by Waulok.
+      'desc': """This is a MEGA65 Port of the original C64 game by Waulok.
 
 Toxic Frenzy is a game heavily inspired by the Nintendo Game & Watch title Oil Panic. You need to use your toxic-proof container to collect the leaking
 fluid from the damaged pipe above. Your container can only hold up to three drops of toxic fluid at once, otherwise your container will overflow
@@ -308,7 +319,7 @@ fluid over will end up covering the innocent by-standers.""",
   {
       'title': 'tutter',
       'desc': """Tutter - Demo of 256 colour FCM, Vertical Char Flips, Raster splits, Palette fades & C64 Music.
-The image I've used is a homage to the Tutankhamun images used in early Amiga and Mega 65 demos...
+The image I've used is a homage to the Tutankhamun images used in early Amiga and MEGA65 demos...
 
 14/11/2021 Appendix : If did this again, I'd use the RRB to smoothly scroll each segment, this version uses raster splits. Cheers, Geehaf.""",
       'category': 'demo',
