@@ -24,5 +24,6 @@ sure your OS does not write additional crap like System Information:
 18. POPCORN.MOD
 19. HEAVY.MOD
 
+No other file should be on the SD card! Again, no deleting and re-adding for release image!
 
 Note: This file (readme.md) won't make it to the card.
