@@ -74,7 +74,7 @@ d81 files contains a version without comments (COMBAT_NO_CMT.prg) and a version 
       'author': 'Amok64'
   },
   {
-      'title': 'dycplogo',
+      'title': 'dycp logo',
       'desc': 'Very simple intro massively using DMA and DYCP trick.',
       'category': 'demo',
       'author': 'Amok64'
@@ -199,7 +199,7 @@ Source code available at https://github.com/lydon42/mandelbrot-explorer65""",
   },
   {
       'title': 'megamaze',
-      'desc': '3D first-person maze game.',
+      'desc': '3D first-person maze game. Very buggy, will most likely crash within the minute!',
       'category': 'game',
       'author': 'gardners'
   },
