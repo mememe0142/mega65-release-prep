@@ -94,7 +94,7 @@ d81 files contains a version without comments (COMBAT_NO_CMT.prg) and a version 
 
   {
       'title': 'fb-bs demo',
-      'desc': """Fred Bowen's original C65 BASIC demo, ehanced and updated for BASIC 65 by Bit Shifter""",
+      'desc': """Fred Bowen's original C65 BASIC demo, enhanced and updated for BASIC 65 by Bit Shifter""",
       'category': 'demo',
       'author': 'Bit Shifter'
   },
