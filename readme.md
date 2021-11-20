@@ -4,15 +4,15 @@ Important note: The order they are added is important for optimal speed on warm/
 Here is the order in which the files should be copied to a freshly fdisk'ed SD card - make
 sure your OS does not write additional crap like System Information:
 
-01. MEGA65.ROM
-02. BANNER.M65
-03. FREEZER.M65
-04. C64THUMB.M65
-05. C65THUMB.M65
-06. ROMLOAD.M65
-07. AUDIOMIX.M65
-08. MAKEDISK.M65
-09. MONITOR.M65
+1. MEGA65.ROM
+2. BANNER.M65
+3. FREEZER.M65
+4. C64THUMB.M65
+5. C65THUMB.M65
+6. ROMLOAD.M65
+7. MONITOR.M65
+8. AUDIOMIX.M65
+9. MAKEDISK.M65
 10. SPRITED.M65
 11. MEGA651.ROM
 12. MEGA652.ROM
