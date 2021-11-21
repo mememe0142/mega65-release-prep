@@ -86,6 +86,7 @@ d81 files contains a version without comments (COMBAT_NO_CMT.prg) and a version 
 Note: use MEGA+Shift keys to switch initial menu to lower-case.""",
       'category': 'utility',
       'author': 'gardners',
+#      'lowercase': 'dummy'
   },
   {
       'title': 'guide akmafin',
@@ -97,6 +98,12 @@ Note: use MEGA+Shift keys to switch initial menu to lower-case.""",
   {
       'title': 'lunar taxi',
       'desc': 'A simple Lunar Lander style game made as an exercise to learn the Millfork language',
+      'category': 'game',
+      'author': 'AkmaFin'
+  },
+  {
+      'title': 'lunar taxi 2',
+      'desc': 'A simple Lunar Lander style game made as an exercise to learn the TRSE language',
       'category': 'game',
       'author': 'AkmaFin'
   },
@@ -418,6 +425,9 @@ cats = sorted(cats)
 
 _lbl_title = lineno
 
+# Use CHR$(14) to go to lowercase
+# Use CHR$(142) to go to uppercase
+
 # buffer current screen contents
 addline('rcursor x,y')
 addline('rx = x:ry = y')
@@ -631,6 +641,10 @@ addline('print "Press {cyan}X{white} to return to prior menu."');
 addline('print "Press {cyan}RETURN{white} to start program."')
 addline('return')
 
+addlabel('.line.')
+addline('print "{}"'.format('- '*38))
+addline('return')
+
 # show program details
 for prg in progs:
     addlabel('.prg_{}.'.format(prg['title']))
@@ -644,10 +658,10 @@ for prg in progs:
     addline('print chr$(2);"{}";chr$(130);" : ";s$;" - {}'.format(cat, format(prg['author'])))
     addline('print')
     addline('print "{light gray}";')
-    addline('print "{}"'.format('- '*38))
+    addline('gosub .line.')
     for ln in prg['desc'].splitlines():
         addline('print "{}"'.format(ln))
-    addline('print "{}"'.format('- '*38))
+    addline('gosub .line.')
     addline('gosub .footer2.')
     addlabel('.prg_{}_loop'.format(prg['title']))
     addline('get a$')
@@ -655,7 +669,10 @@ for prg in progs:
     addline('x={}:y=0:gosub .rainbowstr:pk=pk+1:color 1'.format(len(prg['category'])+3))
     addline('gosub .drawborder')
     addline('if a$<>chr$(13) then goto .prg_{}_loop'.format(prg['title']))
-    addline('print "{home}{home}{clr}";:play')
+    casing='chr$(142)' # uppercase
+    if 'lowercase' in prg:
+        casing='chr$(14)' # lowercase
+    addline('print "{home}{home}{clr}";'+casing+';:play')
     addline('border 6:background 6:color 1')
     addline('print "loading \'{}\'..."'.format(prg['title']))
     addline('sleep 0.5')
