@@ -80,8 +80,18 @@ d81 files contains a version without comments (COMBAT_NO_CMT.prg) and a version 
       'author': 'Amok64'
   },
   {
+      'title': 'floppy test',
+      'desc': """Utility to assess floppy disk performance.
+
+Note: use MEGA+Shift keys to switch initial menu to lower-case.""",
+      'category': 'utility',
+      'author': 'gardners',
+#      'lowercase': 'dummy'
+  },
+  {
       'title': 'guide akmafin',
-      'desc': 'Guide AkmaFin Home - A Game for the MEGA65 (Labyrinth/Maze)',
+      'full': 'guide akmafin home',
+      'desc': 'A Game for the MEGA65 (Labyrinth/Maze)',
       'category': 'game',
       'author': 'stepz'
   },
@@ -459,7 +469,7 @@ addline('play b$,a$,m1$,,,m2$:sleep 0.05:play ,,,b$,a$')
 
 # PRETTY LOOP
 addline('sc=0:pk=16:s$="press any key to begin!')
-addline('cursor 34,19:color 11:print "rom 920252";')
+addline('cursor 34,19:color 11:print "rom 920256";')
 addlabel('.tloop')
 addline('gosub .drawborder')
 addline('x=28:y=21:pk=pk+1:gosub .rainbowstr')
@@ -571,6 +581,12 @@ addline('gosub .drawborder')
 addline('if a$="" then goto .dslp.')
 addline('goto .main.')
 
+addlabel('.lowerstuff.')
+addline('cursor 0, 17')
+addline('print "{cyan}X{white}) Exit to prior menu"')
+addline('print:print "{cyan}Enter your choice:{white} ";')
+addline('return')
+
 # Category menus
 for cat in cats:
     addlabel('.opt_{}.'.format(cat))
@@ -588,12 +604,13 @@ for cat in cats:
                 addline('cursor 56, {}'.format(opt-19+2))
             elif opt > 9:
                 addline('cursor 28, {}'.format(opt-10+2))
-            addline('print chr$(159);"{}";chr$(5);") {}"'.format(optval, prg['title'].upper()))
+            title = prg['title']
+            if 'full' in prg:
+                title = prg['full']
+            addline('print chr$(159);"{}";chr$(5);") {}"'.format(optval, title.upper()))
             opt += 1
 
-    addline('cursor 0, 17')
-    addline('print "{cyan}X{white}) Exit to prior menu"')
-    addline('print:print "{cyan}Enter your choice:{white} ";')
+    addline('gosub .lowerstuff.')
 
     addlabel('.opt_{}_loop'.format(cat))
     addline('get a$')
@@ -611,13 +628,23 @@ for cat in cats:
     addline('gosub .drawborder')
     addline('goto .opt_{}_loop'.format(cat))
 
+addlabel('.footer2.')
+addline('print "{white}";')
+addline('cursor 0, 19')
+addline('print "Press {cyan}X{white} to return to prior menu."');
+addline('print "Press {cyan}RETURN{white} to start program."')
+addline('return')
+
 # show program details
 for prg in progs:
     addlabel('.prg_{}.'.format(prg['title']))
     cat = prg['category']
     cat = cat[0].upper() + cat[1:]
     addline('print "{clr}";')
-    addline('s$ = chr$(18)+"{}"+chr$(146)'.format(prg['title'].upper()))
+    title = prg['title']
+    if 'full' in prg:
+        title = prg['full']
+    addline('s$ = chr$(18)+"{}"+chr$(146)'.format(title.upper()))
     addline('print chr$(2);"{}";chr$(130);" : ";s$;" - {}'.format(cat, format(prg['author'])))
     addline('print')
     addline('print "{light gray}";')
@@ -625,17 +652,17 @@ for prg in progs:
     for ln in prg['desc'].splitlines():
         addline('print "{}"'.format(ln))
     addline('print "{}"'.format('- '*38))
-    addline('print "{white}";')
-    addline('cursor 0, 19')
-    addline('print "Press {cyan}X{white} to return to prior menu."');
-    addline('print "Press {cyan}RETURN{white} to start program."')
+    addline('gosub .footer2.')
     addlabel('.prg_{}_loop'.format(prg['title']))
     addline('get a$')
     addline('if a$="x" then goto .opt_{}.'.format(cat))
     addline('x={}:y=0:gosub .rainbowstr:pk=pk+1:color 1'.format(len(prg['category'])+3))
     addline('gosub .drawborder')
     addline('if a$<>chr$(13) then goto .prg_{}_loop'.format(prg['title']))
-    addline('print "{home}{home}{clr}";chr$(142);:play')
+    casing='chr$(142)' # uppercase
+    if 'lowercase' in prg:
+        casing='chr$(14)' # lowercase
+    addline('print "{home}{home}{clr}";'+casing+';:play')
     addline('border 6:background 6:color 1')
     addline('print "loading \'{}\'..."'.format(prg['title']))
     addline('sleep 0.5')
