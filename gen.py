@@ -86,7 +86,6 @@ d81 files contains a version without comments (COMBAT_NO_CMT.prg) and a version 
 Note: use MEGA+Shift keys to switch initial menu to lower-case.""",
       'category': 'utility',
       'author': 'gardners',
-#      'lowercase': 'dummy'
   },
   {
       'title': 'guide akmafin',
@@ -419,9 +418,6 @@ cats = sorted(cats)
 
 _lbl_title = lineno
 
-# Use CHR$(14) to go to lowercase
-# Use CHR$(142) to go to uppercase
-
 # buffer current screen contents
 addline('rcursor x,y')
 addline('rx = x:ry = y')
@@ -659,10 +655,7 @@ for prg in progs:
     addline('x={}:y=0:gosub .rainbowstr:pk=pk+1:color 1'.format(len(prg['category'])+3))
     addline('gosub .drawborder')
     addline('if a$<>chr$(13) then goto .prg_{}_loop'.format(prg['title']))
-    casing='chr$(142)' # uppercase
-    if 'lowercase' in prg:
-        casing='chr$(14)' # lowercase
-    addline('print "{home}{home}{clr}";'+casing+';:play')
+    addline('print "{home}{home}{clr}";:play')
     addline('border 6:background 6:color 1')
     addline('print "loading \'{}\'..."'.format(prg['title']))
     addline('sleep 0.5')
