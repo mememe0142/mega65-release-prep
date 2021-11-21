@@ -20,7 +20,7 @@ sure your OS does not write additional crap like System Information:
 14. MEGA65.D81
 15. ONBOARD.M65
 16. BASIC65.D81
-17. GEOS.D81
+17. GEOS65.D81
 18. ELEVEN.D81
 19. C64.D81
 20. SOLITAIR.D81
