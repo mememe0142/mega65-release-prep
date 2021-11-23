@@ -83,7 +83,7 @@ d81 files contains a version without comments (COMBAT_NO_CMT.prg) and a version 
       'title': 'floppy test',
       'desc': """Utility to assess floppy disk performance.
 
-Note: use MEGA+Shift keys to switch initial menu to lower-case.""",
+Note: Use MEGA+Shift keys to switch initial menu to lower-case. Remove disk from 3.5 inch floppy disk drive before running!""",
       'category': 'utility',
       'author': 'gardners',
 #      'lowercase': 'dummy'
@@ -475,7 +475,7 @@ addline('play b$,a$,m1$,,,m2$:sleep 0.05:play ,,,b$,a$')
 
 # PRETTY LOOP
 addline('sc=0:pk=16:s$="press any key to begin!')
-addline('cursor 34,19:color 11:print "rom 920256";')
+addline('cursor 34,19:color 11:print "rom 920258";')
 addlabel('.tloop')
 addline('gosub .drawborder')
 addline('x=28:y=21:pk=pk+1:gosub .rainbowstr')
