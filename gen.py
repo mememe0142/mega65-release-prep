@@ -32,6 +32,14 @@ It uses 8 x 16 pixel wide sprites (16 colours available for each sprite) and 80 
       'author': 'akmafin'
   },
   {
+      'title': 'score or die',
+      'desc': """A little TRSE game made for Shallan50k Aug 2021 code challenge. Great speedrun game, how fast are you to get score of 65000 ;)
+
+Latest version added actual hardware capability and CPU saving functionality. (40MHz mode only when game is on, everywhere else speed is 'just' 3MHz)""",
+      'category': 'game',
+      'author': 'airjuri'
+  },
+  {
       'title': 'camelot-1536dots',
       'desc': """1536 dots in 60fps by Camelot
 
@@ -475,7 +483,7 @@ addline('play b$,a$,m1$,,,m2$:sleep 0.05:play ,,,b$,a$')
 
 # PRETTY LOOP
 addline('sc=0:pk=16:s$="press any key to begin!')
-addline('cursor 34,19:color 11:print "rom 920258";')
+addline('cursor 34,19:color 11:print "rom 920262";')
 addlabel('.tloop')
 addline('gosub .drawborder')
 addline('x=28:y=21:pk=pk+1:gosub .rainbowstr')
@@ -693,4 +701,3 @@ f = open('autoboot.bas', 'w')
 for line in lines:
     f.write(line)
 f.close()
-
