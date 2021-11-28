@@ -32,14 +32,6 @@ It uses 8 x 16 pixel wide sprites (16 colours available for each sprite) and 80 
       'author': 'akmafin'
   },
   {
-      'title': 'score or die',
-      'desc': """A little TRSE game made for Shallan50k Aug 2021 code challenge. Great speedrun game, how fast are you to get score of 65000 ;)
-
-Latest version added actual hardware capability and CPU saving functionality. (40MHz mode only when game is on, everywhere else speed is 'just' 3MHz)""",
-      'category': 'game',
-      'author': 'airjuri'
-  },
-  {
       'title': 'camelot-1536dots',
       'desc': """1536 dots in 60fps by Camelot
 
@@ -82,10 +74,22 @@ d81 files contains a version without comments (COMBAT_NO_CMT.prg) and a version 
       'author': 'Amok64'
   },
   {
+      'title': 'dual sid compo',
+      'desc': """These are the entries to my October Dual Sid Challenge, in a nice simple wrapper. Proton won the vote for his excellent rendition of X-Files.""",
+      'category': 'music',
+      'author': 'Shallan50k'
+  },
+  {
       'title': 'dycp logo',
       'desc': 'Very simple intro massively using DMA and DYCP trick.',
       'category': 'demo',
       'author': 'Amok64'
+  },
+  {
+      'title': 'fb-bs demo',
+      'desc': """Fred Bowen's original C65 BASIC demo, enhanced and updated for BASIC 65 by Bit Shifter""",
+      'category': 'demo',
+      'author': 'Bit Shifter'
   },
   {
       'title': 'floppy test',
@@ -103,26 +107,6 @@ Note: Use MEGA+Shift keys to switch initial menu to lower-case. Remove disk from
       'category': 'game',
       'author': 'stepz'
   },
-  {
-      'title': 'lunar taxi',
-      'desc': 'A simple Lunar Lander style game made as an exercise to learn the Millfork language',
-      'category': 'game',
-      'author': 'AkmaFin'
-  },
-  {
-      'title': 'lunar taxi 2',
-      'desc': 'A simple Lunar Lander style game made as an exercise to learn the TRSE language',
-      'category': 'game',
-      'author': 'AkmaFin'
-  },
-
-  {
-      'title': 'fb-bs demo',
-      'desc': """Fred Bowen's original C65 BASIC demo, enhanced and updated for BASIC 65 by Bit Shifter""",
-      'category': 'demo',
-      'author': 'Bit Shifter'
-  },
-
   {
       'title': 'hiomill 65',
       'desc': """A port of the 2020 4K Compo entry Hose It Out. Graphics are updated from the C128 VDC version. So it runs in 320x200 256 colour mode. Although the graphics currently only use 16 of said 256 colour mode.
@@ -145,22 +129,28 @@ Full project for C64Studio. GitHub repo is at: https://github.com/GeorgRottenste
       'author': 'ubik'
   },
   {
-      'title': 'lemonade 65',
-      'desc': """Since no 8-bit-platform is complete without its own implementation of the good old lemonade stand simulation, I decided to bring the good old PET game over to our beloved platform.
-The C65/MEGA65 version is (of course ;)) a little souped up: It's a 2 player game, we have a high score list and a fancy report graph after the sale.""",
-      'category': 'game',
-      'author': 'ubik'
-  },
-  {
       'title': 'kalle kloakk 65',
       'desc': 'Kalle Kloakk MEGA65',
       'category': 'game',
       'author': 'Docster'
   },
   {
+      'title': 'kkniffel',
+      'desc': 'Yahtzee style game for the MEGA65. Includes (actually reasonably skillful) computer player, high score list and session counter to monitor your KKniffel addiction.',
+      'category': 'game',
+      'author': 'ubik'
+  },
+  {
       'title': 'led-designer',
       'desc': 'MEGA65 Power LED Colour Designer.',
       'category': 'utility',
+      'author': 'ubik'
+  },
+  {
+      'title': 'lemonade 65',
+      'desc': """Since no 8-bit-platform is complete without its own implementation of the good old lemonade stand simulation, I decided to bring the good old PET game over to our beloved platform.
+The C65/MEGA65 version is (of course ;)) a little souped up: It's a 2 player game, we have a high score list and a fancy report graph after the sale.""",
+      'category': 'game',
       'author': 'ubik'
   },
   {
@@ -183,10 +173,16 @@ Life charity (https://www.extra-life.org/), raising an incredible $1220.69.""",
       'author': 'Shallan50k'
   },
   {
-      'title': 'kkniffel',
-      'desc': 'Yahtzee style game for the MEGA65. Includes (actually reasonably skillful) computer player, high score list and session counter to monitor your KKniffel addiction.',
+      'title': 'lunar taxi',
+      'desc': 'A simple Lunar Lander style game made as an exercise to learn the Millfork language',
       'category': 'game',
-      'author': 'ubik'
+      'author': 'AkmaFin'
+  },
+  {
+      'title': 'lunar taxi 2',
+      'desc': 'A simple Lunar Lander style game made as an exercise to learn the TRSE language',
+      'category': 'game',
+      'author': 'AkmaFin'
   },
   {
       'title': 'manche',
@@ -232,12 +228,6 @@ Source code available at https://github.com/lydon42/mandelbrot-explorer65""",
       'desc': 'A simple game I\'m writing in BASIC for my 2 year old daughter.',
       'category': 'game',
       'author': 'gurce'
-  },
-  {
-      'title': 'dual sid compo',
-      'desc': """These are the entries to my October Dual Sid Challenge, in a nice simple wrapper. Proton won the vote for his excellent rendition of X-Files.""",
-      'category': 'music',
-      'author': 'Shallan50k'
   },
   {
       'title': 'paledit',
@@ -292,6 +282,14 @@ You're seeing 52 NCM sprites, each 16x16 pixels, spinning around using polar coo
 As you watch, more movement patterns emerge. This version is intended for the MEGA65 HW.""",
       'category': 'demo',
       'author': 'geehaf'
+  },
+  {
+      'title': 'score or die',
+      'desc': """A little TRSE game made for Shallan50k Aug 2021 code challenge. Great speedrun game, how fast are you to get score of 65000 ;)
+
+Latest version added actual hardware capability and CPU saving functionality. (40MHz mode only when game is on, everywhere else speed is 'just' 3MHz)""",
+      'category': 'game',
+      'author': 'airjuri'
   },
   {
       'title': 'ski',
