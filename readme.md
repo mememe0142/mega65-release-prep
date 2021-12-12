@@ -30,4 +30,4 @@ sure your OS does not write additional crap like System Information:
 
 No other file should be on the SD card! Again, no deleting and re-adding for release image!
 
-Note: This file (readme.md) won't make it to the card.
+Note: This file (readme.md), gen.py and border.s won't make it to the card.
