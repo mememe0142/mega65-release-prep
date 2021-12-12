@@ -219,7 +219,7 @@ Source code available at https://github.com/lydon42/mandelbrot-explorer65""",
   },
   {
       'title': 'megamaze',
-      'desc': '3D first-person maze game. Very buggy, will most likely crash within the minute!',
+      'desc': '3D first-person maze game. This currently cannot be unfrozen after using freezer!',
       'category': 'game',
       'author': 'gardners'
   },
@@ -481,7 +481,7 @@ addline('play b$,a$,m1$,,,m2$:sleep 0.05:play ,,,b$,a$')
 
 # PRETTY LOOP
 addline('sc=0:pk=16:s$="press any key to begin!')
-addline('cursor 34,19:color 11:print "rom 920262";')
+addline('cursor 34,19:color 11:print "rom 920266";')
 addlabel('.tloop')
 addline('gosub .drawborder')
 addline('x=28:y=21:pk=pk+1:gosub .rainbowstr')
