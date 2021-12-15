@@ -101,8 +101,15 @@ Note: Use MEGA+Shift keys to switch initial menu to lower-case. Remove disk from
 #      'lowercase': 'dummy'
   },
   {
+      'title': 'go64',
+      'full': 'GO64',
+      'desc': """Does MOUNT ''C64.D81'' : GO64 - nothing more ;)""",
+      'category': 'utility',
+      'author': 'deft'
+  },
+  {
       'title': 'guide akmafin',
-      'full': 'guide akmafin home',
+      'full': 'Guide Akmafin Home',
       'desc': 'A Game for the MEGA65 (Labyrinth/Maze)',
       'category': 'game',
       'author': 'stepz'
@@ -481,7 +488,7 @@ addline('play b$,a$,m1$,,,m2$:sleep 0.05:play ,,,b$,a$')
 
 # PRETTY LOOP
 addline('sc=0:pk=16:s$="press any key to begin!')
-addline('cursor 34,19:color 11:print "rom 920266";')
+addline('cursor 34,19:color 11:print "rom 920269";')
 addlabel('.tloop')
 addline('gosub .drawborder')
 addline('x=28:y=21:pk=pk+1:gosub .rainbowstr')
