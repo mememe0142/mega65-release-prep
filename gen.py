@@ -92,18 +92,17 @@ d81 files contains a version without comments (COMBAT_NO_CMT.prg) and a version 
       'author': 'Bit Shifter'
   },
   {
-      'title': 'floppy test',
-      'desc': """Utility to assess floppy disk performance.
-
-Note: Use MEGA+Shift keys to switch initial menu to lower-case. Remove disk from 3.5 inch floppy disk drive before running!""",
-      'category': 'utility',
-      'author': 'gardners',
-#      'lowercase': 'dummy'
+      'title': 'genetix1',
+      'desc': '23 bit RGB plasma and some RRB sprites runs on PAL only',
+      'category': 'demo',
+      'author': 'Maxice',
   },
   {
       'title': 'go64',
       'full': 'GO64',
-      'desc': """Does MOUNT ''C64.D81'' : GO64 - nothing more ;)""",
+      'desc': """This will MOUNT C64.D81 and perform GO64.
+
+      Pressing RUN/STOP while holding the MEGA key will run the LOADER MENU.""",
       'category': 'utility',
       'author': 'deft'
   },
@@ -488,7 +487,7 @@ addline('play b$,a$,m1$,,,m2$:sleep 0.05:play ,,,b$,a$')
 
 # PRETTY LOOP
 addline('sc=0:pk=16:s$="press any key to begin!')
-addline('cursor 34,19:color 11:print "rom 920269";')
+addline('cursor 27,19:color 11:print "min rom 920273 - pal mode";')
 addlabel('.tloop')
 addline('gosub .drawborder')
 addline('x=28:y=21:pk=pk+1:gosub .rainbowstr')
