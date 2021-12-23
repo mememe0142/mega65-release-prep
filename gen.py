@@ -100,9 +100,9 @@ d81 files contains a version without comments (COMBAT_NO_CMT.prg) and a version 
   {
       'title': 'go64',
       'full': 'GO64',
-      'desc': """This will MOUNT C64.D81 and perform GO64.
+      'desc': """This will just MOUNT C64.D81 and perform GO64.
 
-      Pressing RUN/STOP while holding the MEGA key will run the LOADER MENU.""",
+Learn more about MOUNT and other new commands in the updated MEGA65 manual.""",
       'category': 'utility',
       'author': 'deft'
   },
@@ -487,7 +487,7 @@ addline('play b$,a$,m1$,,,m2$:sleep 0.05:play ,,,b$,a$')
 
 # PRETTY LOOP
 addline('sc=0:pk=16:s$="press any key to begin!')
-addline('cursor 27,19:color 11:print "min rom 920273 - pal mode";')
+addline('cursor 29,19:color 11:print "rom 920275 - pal mode";')
 addlabel('.tloop')
 addline('gosub .drawborder')
 addline('x=28:y=21:pk=pk+1:gosub .rainbowstr')
