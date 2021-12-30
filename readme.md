@@ -23,10 +23,9 @@ sure your OS does not write additional crap like System Information:
 17. GEOS65.D81
 18. ELEVEN.D81
 19. C64.D81
-20. NOTEPAD.D81
-21. SOLITAIR.D81
-22. POPCORN.MOD
-23. HEAVY.MOD
+20. SOLITAIR.D81
+21. POPCORN.MOD
+22. HEAVY.MOD
 
 No other file should be on the SD card! Again, no deleting and re-adding for release image!
 
