@@ -1,7 +1,7 @@
 The files available here are meant to be on the internal SD card for the MEGA65 release.
 Important note: The order they are added is important for optimal speed on warm/cold boots etc.
 
-Here is the order in which the files should be copied to a freshly fdisk'ed SD card - make
+Here is the order in which the files should be copied to a freshly MEGA65-fdisk'ed SD card - make
 sure your OS does not write additional crap like System Information:
 
 1. MEGA65.ROM
