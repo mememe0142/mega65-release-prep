@@ -31,4 +31,4 @@ sure your OS does not write additional crap like System Information:
 No other file should be on the SD card! Again, no deleting and re-adding for release image!
 Files marked with an asterisk are mandatory and should also reside within the bitstream.
 
-Note: This file (readme.md), gen.py and border.s won't make it to the card.
+Note: This file (readme.md), gen.py, border.s and screen.bin.prg don't belong on the card!
