@@ -17,15 +17,15 @@ sure your OS does not write additional crap like System Information:
 11. MEGA651.ROM
 12. MEGA652.ROM
 13. MEGA650.ROM
-14. MEGA65.D81
+14. MEGA65.D81 *
 15. ONBOARD.M65 *
 16. BASIC65.D81
 17. GEOS65.D81
 18. ELEVEN.D81
-19. C64.D81
+19. C64.D81 *
 20. SOLITAIR.D81
 21. DEMOCOMP.D81
-22. POPCORN.MOD
+22. POPCORN.MOD *
 23. HEAVY.MOD
 
 No other file should be on the SD card! Again, no deleting and re-adding for release image!
