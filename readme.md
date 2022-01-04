@@ -29,6 +29,7 @@ sure your OS does not write additional crap like System Information:
 23. HEAVY.MOD
 
 No other file should be on the SD card! Again, no deleting and re-adding for release image!
+___________________________________________________________________________________________
 
 Note:
 
