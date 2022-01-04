@@ -39,4 +39,5 @@ Note:
 5. corfiles.txt
 6. copy-flash.sh
 7. sorted-files.txt
+8. Makefile
 ...don't belong on the card!
