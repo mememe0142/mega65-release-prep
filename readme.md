@@ -30,4 +30,13 @@ sure your OS does not write additional crap like System Information:
 
 No other file should be on the SD card! Again, no deleting and re-adding for release image!
 
-Note: This file (readme.md), gen.py, border.s, screen.bin.prg and corfiles.txt don't belong on the card!
+Note:
+
+1. This file (readme.md)
+2. gen.py
+3. border.s
+4. screen.bin.prg
+5. corfiles.txt
+6. copy-flash.sh
+7. sorted-files.txt
+...don't belong on the card!
