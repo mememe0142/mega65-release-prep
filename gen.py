@@ -199,7 +199,7 @@ Most first generation MODs now supported.
 Usage:
 - Place .MOD files onto your SD Card
 - Run Manche
-- Press F1 and type in your .MOD file name and press ENTER to play.
+- Press F1 and type in your .MOD file name and press SPACE to play.
 - Your SD card contains two examples you can try (HEAVY.MOD and POPCORN.MOD)
 - More detailed instructions can be found within .zip file""",
       'category': 'music',
@@ -487,7 +487,7 @@ addline('play b$,a$,m1$,,,m2$:sleep 0.05:play ,,,b$,a$')
 
 # PRETTY LOOP
 addline('sc=0:pk=16:s$="press any key to begin!')
-addline('cursor 29,19:color 11:print "rom 920278 - pal mode";')
+addline('cursor 29,19:color 11:print "rom 920284 - pal mode";')
 addlabel('.tloop')
 addline('gosub .drawborder')
 addline('x=28:y=21:pk=pk+1:gosub .rainbowstr')
