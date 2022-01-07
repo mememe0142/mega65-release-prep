@@ -487,7 +487,7 @@ addline('play b$,a$,m1$,,,m2$:sleep 0.05:play ,,,b$,a$')
 
 # PRETTY LOOP
 addline('sc=0:pk=16:s$="press any key to begin!')
-addline('cursor 29,19:color 11:print "rom 920284 - pal mode";')
+addline('cursor 29,19:color 11:print "rom 920285 - pal mode";')
 addlabel('.tloop')
 addline('gosub .drawborder')
 addline('x=28:y=21:pk=pk+1:gosub .rainbowstr')
@@ -688,6 +688,7 @@ for prg in progs:
     addline('border 6:background 6:color 1')
     addline('print "loading \'{}\'..."'.format(prg['title']))
     addline('sleep 0.5')
+    addline('for i=0 to 20:poke 54800,0:next i')
     addline('clr:dload "{}"'.format(prg['title']))
     addline('end')
 
