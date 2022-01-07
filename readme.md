@@ -28,6 +28,20 @@ sure your OS does not write additional crap like System Information:
 22. HEAVY.MOD
 
 No other file should be on the SD card! Again, no deleting and re-adding for release image!
+
+BEFORE CLONING, PLEASE
+
+1. PREPARE CARD AS MENTIONED ABOVE
+2. BOOT THIS CARD IN MEGA65
+3. ENTER CONFIG/TOOLS MENU (HOLD ALT DURING COLD BOOT)
+4. PRESS 1 FOR CONFIG
+5. SET MACHINE TO PAL
+6. SAVE AS DEFAIULTS AND EXIT (OPTION 4 IN DONE MENU)
+7. AGAIN ENTER CONFIG/TOOLS MENU (HOLD ALT DURING COLD BOOT)
+8. PRESS 1 FOR CONFIG
+9. EXIT AND REBOOT TO ONBOARDING (OPTION 3 IN DONE MENU)
+10. SHUT DOWN COMPUTER IN (VIDEO) ONBOARDING SCREEN
+11. CLONE CARD
 ___________________________________________________________________________________________
 
 Note:
