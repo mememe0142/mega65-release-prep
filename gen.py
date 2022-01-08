@@ -398,6 +398,12 @@ Some quick tips:
 - when using the a)rea selection tool in drawing mode, you can switch between workspaces once you have selected an area""",
       'category': 'utility',
       'author': 'ubik'
+  },
+  {
+      'title': 'zombie detective',
+      'desc': 'Collect clues, solve the case. From Shallan\'s February 2021 BASIC10 coding competition.',
+      'category': 'game',
+      'author': 'James'
   }
 ]
 
