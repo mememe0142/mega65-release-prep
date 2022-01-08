@@ -1,3 +1,8 @@
+===========================================================
+UPDATE: mega65_release_sd_master_16gb.7z is here! All done!
+===========================================================
+
+
 The files available here are meant to be on the internal SD card for the MEGA65 release.
 Important note: The order they are added is important for optimal speed on warm/cold boots etc.
 
@@ -57,5 +62,6 @@ Note:
 6. copy-flash.sh
 7. sorted-files.txt
 8. Makefile
+9. mega65_release_sd_master_16gb.7z
 
 ...don't belong on the card!
